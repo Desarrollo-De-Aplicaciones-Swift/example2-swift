@@ -84,7 +84,7 @@
             </objects>
             <point key="canvasLocation" x="3776.8000000000002" y="68.815592203898049"/>
         </scene>
-        <!--Item-->
+        <!--Ayuda-->
         <scene sceneID="F5a-qx-x8d">
             <objects>
                 <viewController id="oSr-r7-dG2" sceneMemberID="viewController">
@@ -94,13 +94,13 @@
                         <viewLayoutGuide key="safeArea" id="oHc-GN-S0G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="aGe-pr-meM"/>
+                    <tabBarItem key="tabBarItem" title="Ayuda" image="questionmark.circle" catalog="system" id="aGe-pr-meM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yrt-uc-RSF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="967" y="920"/>
         </scene>
-        <!--Item-->
+        <!--Favoritos-->
         <scene sceneID="g5S-20-6no">
             <objects>
                 <viewController id="SLo-Gt-SNS" sceneMemberID="viewController">
@@ -110,17 +110,17 @@
                         <viewLayoutGuide key="safeArea" id="P1s-ec-gz1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Fwg-KD-P5H"/>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="star.circle" catalog="system" id="Fwg-KD-P5H"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ho9-zC-YMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28" y="920"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="b75-cQ-59U">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MOz-PU-Tsf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="t19-pS-Ht3"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.circle" catalog="system" id="t19-pS-Ht3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="yYT-Lf-ohh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
@@ -136,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="967.20000000000005" y="68.815592203898049"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--TapBar-->
         <scene sceneID="FCQ-aJ-vcy">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2Yh-3u-XSF" sceneMemberID="viewController">
+                <tabBarController title="TapBar" automaticallyAdjustsScrollViewInsets="NO" id="2Yh-3u-XSF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bst-gt-NXD">
                         <autoresizingMask key="autoresizingMask"/>
@@ -147,8 +147,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="MOz-PU-Tsf" kind="relationship" relationship="viewControllers" id="Aew-sr-f65"/>
-                        <segue destination="oSr-r7-dG2" kind="relationship" relationship="viewControllers" id="vPD-sa-Mgp"/>
                         <segue destination="SLo-Gt-SNS" kind="relationship" relationship="viewControllers" id="xfR-Oj-vnu"/>
+                        <segue destination="oSr-r7-dG2" kind="relationship" relationship="viewControllers" id="vPD-sa-Mgp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Baf-Iu-ZdH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,6 +157,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house.circle" catalog="system" width="128" height="121"/>
+        <image name="questionmark.circle" catalog="system" width="128" height="121"/>
+        <image name="star.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
