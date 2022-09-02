@@ -87,7 +87,7 @@
         <!--Ayuda-->
         <scene sceneID="F5a-qx-x8d">
             <objects>
-                <viewController id="oSr-r7-dG2" sceneMemberID="viewController">
+                <viewController id="oSr-r7-dG2" customClass="HelpViewController" customModule="NavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iuh-ty-r7P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,18 +103,41 @@
         <!--Favoritos-->
         <scene sceneID="g5S-20-6no">
             <objects>
-                <viewController id="SLo-Gt-SNS" sceneMemberID="viewController">
+                <viewController id="SLo-Gt-SNS" customClass="FavoritesViewController" customModule="NavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yJb-kB-11U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n9M-hZ-4gz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hj6-XK-ndB">
+                                <rect key="frame" x="112.5" y="582" width="150.5" height="26"/>
+                                <connections>
+                                    <action selector="posterPageControlAction:" destination="SLo-Gt-SNS" eventType="valueChanged" id="dym-Kh-C6J"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="P1s-ec-gz1"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="n9M-hZ-4gz" firstAttribute="leading" secondItem="P1s-ec-gz1" secondAttribute="leading" id="Fpe-UU-ywf"/>
+                            <constraint firstItem="P1s-ec-gz1" firstAttribute="bottom" secondItem="Hj6-XK-ndB" secondAttribute="bottom" constant="10" id="G8x-qK-exM"/>
+                            <constraint firstItem="n9M-hZ-4gz" firstAttribute="top" secondItem="P1s-ec-gz1" secondAttribute="top" id="JTT-AW-DqL"/>
+                            <constraint firstItem="P1s-ec-gz1" firstAttribute="bottom" secondItem="n9M-hZ-4gz" secondAttribute="bottom" constant="10" id="QyM-XX-ZMc"/>
+                            <constraint firstItem="n9M-hZ-4gz" firstAttribute="trailing" secondItem="P1s-ec-gz1" secondAttribute="trailing" id="flZ-Dy-xJQ"/>
+                            <constraint firstItem="Hj6-XK-ndB" firstAttribute="centerX" secondItem="yJb-kB-11U" secondAttribute="centerX" id="jmD-w0-lv9"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favoritos" image="star.circle" catalog="system" id="Fwg-KD-P5H"/>
+                    <connections>
+                        <outlet property="favoritePosterImage" destination="n9M-hZ-4gz" id="gua-M7-rf2"/>
+                        <outlet property="posterPageControl" destination="Hj6-XK-ndB" id="hyS-Jk-GxS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ho9-zC-YMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="920"/>
+            <point key="canvasLocation" x="28" y="919.79010494752629"/>
         </scene>
         <!--Home-->
         <scene sceneID="b75-cQ-59U">
@@ -162,6 +185,9 @@
         <image name="star.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
