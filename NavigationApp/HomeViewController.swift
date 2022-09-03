@@ -9,10 +9,19 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet var cardView: UIView!
+    let movieDataManager = MovieDataManager()
+    let genreDataManager = GenreDataManager()
+    let defaultGenre = "Adventure"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        cardView.layer.cornerRadius = 30
+        cardView.layer.cornerCurve = .continuous
+        cardView.layer.masksToBounds = true
+        
+        //movieDataManager.fetch(genre: defaultGenre)
+        genreDataManager.fetch()
     }
     
 
