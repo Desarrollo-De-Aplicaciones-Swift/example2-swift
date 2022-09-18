@@ -18,7 +18,7 @@ class MovieDataManager {
                 movies = decodedMovies.filter(
                     {$0.genres.contains(genre) }
                 )
-                //print("movies: ",movies)
+                print("movies: ",movies)
             }
             catch{
                 print("Error", error)

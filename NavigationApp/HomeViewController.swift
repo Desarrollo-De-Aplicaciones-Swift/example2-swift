@@ -7,12 +7,13 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController,  UICollectionViewDataSource, UICollectionViewDelegate{
+    
     @IBOutlet var cardView: UIView!
     let movieDataManager = MovieDataManager()
     let genreDataManager = GenreDataManager()
     let defaultGenre = "Adventure"
+    var selectGenre : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +25,30 @@ class HomeViewController: UIViewController {
         genreDataManager.fetch()
     }
     
-
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        genreDataManager.genreCount()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath)as! MovieCell
+        let genre = genreDataManager.genreAt(index: indexPath.row)
+        cell.movieGenreLabel.text = genre.genre
+        return cell
+        
+    }
+    /*
     @IBAction func ViewDetailButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "detailSegue", sender: Self.self)
         
+    }*/
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectGenre = genreDataManager.genreValue(index: indexPath.row)
+        self.performSegue(withIdentifier: "detailSegue", sender: Self.self)
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! DetailViewController
+        destination.receivedGenre = selectGenre
+    }
 }
