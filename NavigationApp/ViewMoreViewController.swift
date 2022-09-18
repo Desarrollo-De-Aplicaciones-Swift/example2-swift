@@ -34,6 +34,7 @@ class ViewMoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         titleLabel.text = recivedMovie?.title
         directorLabel.text = recivedMovie?.director
         anioLabel.text = recivedMovie?.year

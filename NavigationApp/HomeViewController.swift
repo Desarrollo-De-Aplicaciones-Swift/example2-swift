@@ -21,7 +21,6 @@ class HomeViewController: UIViewController,  UICollectionViewDataSource, UIColle
         cardView.layer.cornerCurve = .continuous
         cardView.layer.masksToBounds = true
         
-        //movieDataManager.fetch(genre: defaultGenre)
         genreDataManager.fetch()
     }
     
@@ -36,11 +35,6 @@ class HomeViewController: UIViewController,  UICollectionViewDataSource, UIColle
         return cell
         
     }
-    /*
-    @IBAction func ViewDetailButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "detailSegue", sender: Self.self)
-        
-    }*/
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectGenre = genreDataManager.genreValue(index: indexPath.row)

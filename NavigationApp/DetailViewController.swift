@@ -32,16 +32,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(receivedGenre)
         
         movieDataManager.fetch(genre: receivedGenre)
         
     }
     
-//    @IBAction func viewMoreButton(_ sender: UIButton) {
-//        self.performSegue(withIdentifier: "viewMoreSegue", sender: self.self)
-//
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieDataManager.movieCount()

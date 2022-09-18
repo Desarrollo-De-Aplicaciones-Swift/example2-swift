@@ -18,7 +18,7 @@ class GenreDataManager {
                 for genre in decodedGenres{
                     genres.append(Genre(genre: genre))
                 }
-                print("genre: ", genres)
+                //print("genre: ", genres)
             }
             catch{
                 print("Error")
